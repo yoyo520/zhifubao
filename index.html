@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/jquery.fullPage.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<link href="css/rem.css" type="text/css">
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		video {
+			margin: 0;
+			padding: 0;
+			object-fit: fill;
+		}
+		
+		body {
+			width: 100%;
+		}
+		
+		.section {
+			position: relative;
+		}
+		
+		.section h3,
+		h4 {
+			font-size: 3rem;
+			text-align: center;
+			padding-top: 3%;
+		}
+		
+		.section p {
+			font-size: 2rem;
+			text-indent: 2em;
+		}
+		
+		.section_1 {
+			background: white;
+			position: absolute;
+			top: 60%;
+			width: 50%;
+			border-radius: 10px;
+			line-height: 55px;
+			left: -50%;
+		}
+		
+		.section_2,
+		.section_2_1 {
+			background: white;
+			position: absolute;
+			top: 32%;
+			width: 70%;
+			border-radius: 10px;
+			line-height: 55px;
+			left: -70%;
+			padding-bottom: 3%;
+		}
+		
+		.section_2 p,
+		.section_2_1 {
+			text-indent: 0;
+		}
+		
+		.section img {
+			width: 20%;
+			position: absolute;
+			right: -20%;
+			top: 17%;
+		}
+		
+		.section_3,
+		.section_3_1 {
+			background: white;
+			position: absolute;
+			top: 85%;
+			width: 45%;
+			border-radius: 10px;
+			line-height: 55px;
+			left: 30%;
+			padding-bottom: 3%;
+			opacity: 0;
+		}
+		
+		.section_3 p,
+		.section_3_1 p {
+			text-align: center;
+			text-indent: 0;
+			padding-top: 3%;
+		}
+		
+		.section_3 span,
+		.section_3_1 span {
+			font-size: 1.5rem;
+			display: block;
+			text-align: center;
+		}
+		
+		.jiao,
+		.jiao_1 {
+			display: block;
+			width: 1.5rem;
+			height: 1.5rem;
+			transform: rotate(45deg);
+			position: absolute;
+			top: -10px;
+			background: white;
+			left: 76%;
+		}
+		
+		#dowebok .section .add_animate {
+			transform: rotate(360deg);
+			transition: all 1s ease-in-out;
+			right: 30%;
+		}
+		
+		#dowebok .section .remove_animate {
+			transform: rotate(0deg);
+			transition: all 1s ease-in-out;
+			right: -20%;
+		}
+		
+		.section1 {
+			background: url(images/1.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section2 {
+			background: url(images/2.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section3 {
+			background: url(images/3.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section4 {
+			background: url(images/4.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section5 {
+			background: url(images/5.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section6 {
+			background: url(images/6.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section7 {
+			background: url(images/7.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		.section8 {
+			background: url(images/8.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+
+	<body>
+		<div id="dowebok">
+			<div class="section section1">
+				<video id="video2" preload="auto" width="100%" height="100%" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline style="display: none;">
+					<source src="http://image.test.com/mhao24/media/2-1.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+				<div class="section_1">
+					<p>时光总是偷偷流流逝</p>
+					<p>转眼间一年又过去了</p>
+					<p>打开支付宝账单</p>
+					<p>这一年你又被坑了多少钱呢？</p>
+				</div>
+			</div>
+			<div class="section section2">
+				<video id="video1" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/1-2.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+				</video>
+
+				<video id="video4" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/3-2.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+				<div class="section_2">
+					<span class="jiao"></span>
+					<h4>100万</h4>
+					<p>2017年你更爱买化妆品类商品共花费100万美元</p>
+					<p>爱买不代表喜欢更代表剁手</p>
+				</div>
+				<img src="images/meifu.jpg" id="meifu">
+				<div class="section_3">
+					<p>网购总支出1000万</p>
+					<span>服饰类80%旅游0.0001%通信1%</span>
+				</div>
+			</div>
+			<div class="section section3">
+				<video id="video3" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/2-3.mp4" type="video/mp4"> 您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<video id="video6" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/4-3.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+				<div class="section_2_1">
+					<span class="jiao_1"></span>
+					<h4>100万</h4>
+					<p>2017年你更爱买化妆品类商品共花费100万美元</p>
+					<p>爱买不代表喜欢更代表剁手</p>
+				</div>
+				<img src="images/meifu.jpg" id="meifu_1">
+				<div class="section_3_1">
+					<p>网购总支出1000万</p>
+					<span>服饰类80%旅游0.0001%通信1%</span>
+				</div>
+			</div>
+			<div class="section section4">
+				<video id="video5" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/3-4.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<video id="video8" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/5-4.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+			</div>
+			<div class="section section5">
+				<video id="video7" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/4-5.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<video id="video10" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/6-5.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+			</div>
+			<div class="section section6">
+				<video id="video9" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/5-6.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<video id="video12" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/7-6.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+			</div>
+			<div class="section section7">
+				<video id="video11" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/6-7.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<video id="video14" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/8-7.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+			</div>
+			<div class="section section8">
+				<video id="video13" preload="auto" muted="muted" x-webkit-airplay="true" webkit-playsinline="true" playsinline preload width="100%" height="100%" style="display: none;">
+					<source src="http://image.test.com/mhao24/media/7-8.mp4" type="video/mp4"> 
+						您的浏览器不支持 HTML5 video 标签。
+				</video>
+				<h3>2018年度账单</h3>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function() {
+			$(".section_1").animate({
+				'left': '10%'
+			}, 1000, 'easeOutQuint');
+			$('#dowebok').fullpage({
+				
+				scrollingSpeed:0,
+				afterLoad: function(anchorLink, index) {
+					if(index == '1') {
+						$(".section_1").delay(3000).animate({
+							'left': '10%'
+						}, 1000, 'easeOutQuint');
+					};
+					if(index == '2') {
+						$("#meifu").delay(1000).animate({
+							"right": '30%'
+						}, 1000, 'easeOutQuint');
+						$(".section_2").delay(1500).animate({
+							'left': '5%'
+						}, 1000, 'easeOutQuint');
+						$(".section_3").delay(1500).animate({
+							'top': '80%',
+							'opacity': '1'
+						}, 1000, 'easeOutQuint')
+					}
+					if(index == '3') {
+						
+						$("#meifu_1").delay(1500).addClass("add_animate").removeClass('remove_animate');
+						$(".section_2_1").delay(500).animate({
+							'left': '5%'
+						}, 1000, 'easeOutQuint');
+						$(".section_3_1").delay(500).animate({
+							'top': '80%',
+							'opacity': '1'
+						}, 1000, 'easeOutQuint')
+					}
+					if(index == '4') {
+				      //playVideo($("#video5"));
+				     // playVideo($("#video8"));
+					}
+					if(index == '5') {
+				      
+					}
+				},
+				onLeave: function(index, nextIndex, direction) {
+					if(index == '1') {
+						playVideo($("#video1"));
+						
+						$(".section_1").animate({
+							'left': '-50%'
+						}, 1000, 'easeOutQuint');
+					};
+					if(index == '2') {
+						
+	                    playVideo($("#video3"));
+                         playVideo($("#video2"));
+						$("#meifu").animate({
+							"right": '-20%'
+						}, 1000, 'easeOutQuint');
+						$(".section_2").animate({
+							'left': '-70%'
+						}, 1000, 'easeOutQuint');
+						$(".section_3").animate({
+							'top': '85%',
+							'opacity': '0'
+						}, 1000, 'easeOutQuint')
+					};
+					if(index == '3') {
+						
+                        playVideo($("#video4"));
+                        playVideo($("#video5"));
+                        
+						$("#meifu_1").delay(500).addClass("remove_animate").removeClass('add_animate');
+						$(".section_2_1").animate({
+							'left': '-70%'
+						}, 1000, 'easeOutQuint');
+						$(".section_3_1").animate({
+							'top': '85%',
+							'opacity': '0'
+						}, 1000, 'easeOutQuint')
+					};
+						if(index == '4') {
+							
+                        playVideo($("#video6"));
+                        playVideo($("#video7"));
+                        
+						$("#meifu_1").delay(500).addClass("remove_animate").removeClass('add_animate');
+						$(".section_2_1").animate({
+							'left': '-70%'
+						}, 1000, 'easeOutQuint');
+						$(".section_3_1").animate({
+							'top': '85%',
+							'opacity': '0'
+						}, 1000, 'easeOutQuint')
+					};
+					
+					if(index == '5') {
+                        playVideo($("#video8"));
+                        playVideo($("#video9"));
+					};
+					if(index == '6') {
+                        playVideo($("#video10"));
+                        playVideo($("#video11"));
+					};
+					if(index == '7') {
+                        playVideo($("#video12"));
+                        playVideo($("#video13"));
+					};
+					if(index == '8') {
+                        playVideo($("#video14"));
+//                      playVideo($("#video13"));
+					};
+				},
+			});
+			//短视频播放逻辑
+			function playVideo(ele){
+				      	ele.show();
+						ele[0].play();
+						ele.click();
+						ele[0].addEventListener("ended", function() {
+							ele.hide();
+				     });
+			  }
+		});
+	</script>
+
+</html>
